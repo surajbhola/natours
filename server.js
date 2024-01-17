@@ -2,10 +2,12 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 
-const DB = process.env.DATABASE.replace(
-  "<PASSWORD>",
-  process.env.DATABASE_PASSWORD
-);
+
+// const DB = process.env.DATABASE.replace(
+//   "<PASSWORD>",
+//   process.env.DATABASE_PASSWORD
+// );
+const DB = 'mongodb+srv://iamsun:iamsunnatoursapp@natours-app.avhtge2.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.connect(DB).then(() => {
   console.log("DB connection succesful!!!");
