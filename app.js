@@ -43,12 +43,12 @@ if (process.env.NODE_ENV === "development") {
 
 
 // decides how many requests per IP will allowed in several times
-const limiter = rateLimit({
-  max: 100,
-  windowMs: 60 * 60 * 1000,
-  message: "Too many request from this IP, please try again in an hour",
-});
-app.use("/api", limiter);
+// const limiter = rateLimit({
+//   max: 100,
+//   windowMs: 60 * 60 * 1000,
+//   message: "Too many request from this IP, please try again in an hour",
+// });
+// app.use("/api", limiter);
 
 // bodyparser , reading data from body into req.body
 app.use(express.json({ limit: "10kb" })); // middleware fzunction to get data using req object in post method
