@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-
+const compression = require("compression");
 const path = require("path");
 const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
@@ -82,6 +82,7 @@ app.use(
   )
 );
 
+app.use(compression());
 // testing middlewares
 app.use((req,res, next)=>{
   console.log(req.cookies);
