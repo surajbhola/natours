@@ -57,6 +57,7 @@ exports.login = catchAsync(async (req, res, next) => {
   if (!user || !(await user.correctPassword(password, user.password))) {
     return next(new AppError("Incorrect email or password", 401));
   }
+  console.log("login hogya ku ki password sahi tha")
   // 3 if everything ok,  send token to client
   createAndSendToken(user, 200, res);
 });
