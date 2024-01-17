@@ -17,7 +17,7 @@ const app = require("./app");
 const { type } = require("os");
 const server = require("http").createServer(app);
 
-server.listen(process.env.PORT, () => console.log("server running..."));
+server.listen(process.env.PORT, "0.0.0.0", () => console.log("server running..."));
 
 // handling unhandled promise rejection
 process.on("uncaughtException", (err) => {
